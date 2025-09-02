@@ -99,6 +99,8 @@ GEM
       tzinfo
     factory_bot (6.5.5)
       activesupport (>= 6.1.0)
+    faker (3.5.2)
+      i18n (>= 1.8.11, < 2)
     fugit (1.11.2)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -335,6 +337,7 @@ DEPENDENCIES
   brakeman
   debug
   factory_bot (~> 6.4, >= 6.4.6)
+  faker
   kamal
   pg (~> 1.1)
   puma (>= 5.0)
