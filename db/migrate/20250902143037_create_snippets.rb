@@ -1,4 +1,4 @@
-class Snippets < ActiveRecord::Migration[8.0]
+class CreateSnippets < ActiveRecord::Migration[8.0]
   def change
     create_table :snippets do |t|
       t.text :text
