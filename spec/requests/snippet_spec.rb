@@ -35,16 +35,17 @@ RSpec.describe SnippetController, type: :request do
      end
   end
 
-   describe "POST /snippets" do
-    it "should generate a summary based on the text provided,and return id, summary, and text information" do
-      post :create, params: { text: "Text to summarize" }
+   describe "POST /snippets", focus: true do
+    it "should generate a summary based on the text provided and return id, summary, and text information" do
+      post "/snippets", params: { text: "Text to summarize" }
 
       expect(response.body).to be_truthy
 
      body = JSON.parse(response.body)
-     expect(body.id).to be_truthy
-     expect(body.text).to be_truthy
-     expect(body.summary).to be_truthy
+
+     expect(body['id']).to be_truthy
+     expect(body['text']).to be_truthy
+     expect(body['summary']).to be_truthy
     end
    end
 end

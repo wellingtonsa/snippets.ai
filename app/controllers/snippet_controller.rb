@@ -1,6 +1,10 @@
 class SnippetController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :snippet_not_found
     def create
+        text = params[:text]
+        snippet = Snippet.create(text: text, summary: "Text created by ChatGPT [TODO]")
+
+        render json: snippet
     end
 
     def show
