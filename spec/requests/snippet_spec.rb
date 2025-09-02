@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SnippetController, type: :request do
   describe "GET /snippets" do
-    it "should find and return all snippets" do
+    it "should find and return all snippets", focus: true do
       get '/snippets'
 
       body = JSON.parse(response.body)
@@ -15,14 +15,14 @@ RSpec.describe SnippetController, type: :request do
       snippet = Snippet.create(text: "Text", summary: "Summary")
 
       get "/snippets/#{snippet.id}"
-
       expect(response.body).to be_truthy
 
       body = JSON.parse(response.body)
-      expect(body.id).to eq(snippet.id)
+
+      expect(body['id']).to eq(snippet.id)
     end
 
-    it "should return 'Nenhum snippet encontrado!' if there is no snippet with the ID " do
+     it "should return 'Nenhum snippet encontrado!' if there is no snippet with the ID ", focus: true do
       snippet = Snippet.create(text: "Text", summary: "Summary")
 
       get "/snippets/0"
@@ -30,20 +30,21 @@ RSpec.describe SnippetController, type: :request do
       expect(response.body).to be_truthy
 
       body = JSON.parse(response.body)
-      expect(body.message).to eq('Nenhum snippet encontrado!')
-    end
+
+      expect(body['error']).to eq('Nenhum snippet encontrado!')
+     end
   end
 
-  describe "POST /snippets" do
+   describe "POST /snippets" do
     it "should generate a summary based on the text provided,and return id, summary, and text information" do
       post :create, params: { text: "Text to summarize" }
 
       expect(response.body).to be_truthy
 
-      body = JSON.parse(response.body)
-      expect(body.id).to be_truthy
-      expect(body.text).to be_truthy
-      expect(body.summary).to be_truthy
+     body = JSON.parse(response.body)
+     expect(body.id).to be_truthy
+     expect(body.text).to be_truthy
+     expect(body.summary).to be_truthy
     end
-  end
+   end
 end
