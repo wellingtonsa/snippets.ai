@@ -15,8 +15,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_02_143037) do
   enable_extension "pg_catalog.plpgsql"
 
   create_table "snippets", force: :cascade do |t|
-    t.text "text"
-    t.text "summary"
+    t.text "text", null: false
+    t.text "summary", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
