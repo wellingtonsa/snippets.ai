@@ -82,6 +82,8 @@ GEM
     brakeman (7.1.0)
       racc
     builder (3.3.0)
+    chatgpt-ruby (2.1.1)
+      rest-client (~> 2.1)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.3)
     crass (1.0.6)
@@ -90,6 +92,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     diff-lcs (1.6.2)
+    domain_name (0.6.20240107)
     dotenv (3.1.8)
     drb (2.2.3)
     ed25519 (1.4.0)
@@ -109,6 +112,9 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    http-accept (1.7.0)
+    http-cookie (1.0.8)
+      domain_name (~> 0.5)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     io-console (0.8.1)
@@ -140,6 +146,10 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
+    mime-types (3.7.0)
+      logger
+      mime-types-data (~> 3.2025, >= 3.2025.0507)
+    mime-types-data (3.2025.0902)
     mini_mime (1.1.5)
     minitest (5.25.5)
     msgpack (1.8.0)
@@ -157,6 +167,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     net-ssh (7.3.0)
+    netrc (0.11.0)
     nio4r (2.7.4)
     nokogiri (1.18.9-aarch64-linux-gnu)
       racc (~> 1.4)
@@ -236,6 +247,11 @@ GEM
     regexp_parser (2.11.2)
     reline (0.6.2)
       io-console (~> 0.5)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     rspec-core (3.13.5)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.5)
@@ -338,7 +354,9 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  chatgpt-ruby
   debug
+  dotenv
   factory_bot (~> 6.4, >= 6.4.6)
   factory_bot_rails
   faker
