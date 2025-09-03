@@ -5,4 +5,10 @@ Rails.application.routes.draw do
   post "/snippets", to: "snippet#create"
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Error handling
+  unless Rails.env.development?
+    match "*unmatched", to: "errors#not_found", via: :all
+    match "/", to: "application#ok", via: :all
+  end
 end
