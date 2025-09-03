@@ -11,7 +11,7 @@ RSpec.describe SnippetController, type: :request do
   end
 
   describe "GET /snippets/:id" do
-    it "should find the snippet by ID" do
+    it "should find the snippet by ID", focus: true do
       snippet = Snippet.create(text: "Text", summary: "Summary")
 
       get "/snippets/#{snippet.id}"
@@ -19,10 +19,10 @@ RSpec.describe SnippetController, type: :request do
 
       body = JSON.parse(response.body)
 
-      expect(body['id']).to eq(snippet.id)
+      expect(body.dig("id")).to eq(snippet.id)
     end
 
-     it "should return 'Nenhum snippet encontrado!' if there is no snippet with the ID ", focus: true do
+     it "should return 'Nenhum snippet encontrado com esse ID.' if there is no snippet with the ID ", focus: true do
       snippet = Snippet.create(text: "Text", summary: "Summary")
 
       get "/snippets/0"
@@ -31,7 +31,7 @@ RSpec.describe SnippetController, type: :request do
 
       body = JSON.parse(response.body)
 
-      expect(body['error']).to eq('Nenhum snippet encontrado!')
+      expect(body.dig("error")).to eq('Nenhum snippet encontrado com esse ID.')
      end
   end
 
@@ -41,11 +41,23 @@ RSpec.describe SnippetController, type: :request do
 
       expect(response.body).to be_truthy
 
-     body = JSON.parse(response.body)
+      body = JSON.parse(response.body)
 
-     expect(body['id']).to be_truthy
-     expect(body['text']).to be_truthy
-     expect(body['summary']).to be_truthy
+      expect(body.dig("id")).to be_truthy
+      expect(body.dig("text")).to be_truthy
+      expect(body.dig("summary")).to be_truthy
     end
+
+    it "should return 'Nenhum texto providenciado. Por favor, adicione um texto para ser resumido.' if there is no snippet with the ID ", focus: true do
+      snippet = Snippet.create(text: "Text", summary: "Summary")
+
+      post "/snippets", params: {}
+
+      expect(response.body).to be_truthy
+
+      body = JSON.parse(response.body)
+
+      expect(body.dig("error")).to eq('Nenhum texto providenciado. Por favor, adicione um texto para ser resumido.')
+     end
    end
 end
