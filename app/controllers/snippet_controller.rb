@@ -1,10 +1,19 @@
 class SnippetController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :snippet_not_found
+    rescue_from ActiveRecord::RecordInvalid, with: :snippet_invalid
+    rescue_from ActionDispatch::Http::Parameters::ParseError, with: :snippet_invalid
     def create
         text = params[:text]
-        snippet = Snippet.create(text: text, summary: "Text created by ChatGPT [TODO]")
+        p text
+        if text.nil? || text.empty?
+            snippet_invalid()
+        else
+            service = ChatGptService.new
+            summary = service.summarize(text)
+            snippet = Snippet.create(text: text, summary: summary)
 
-        render json: snippet
+            render json: snippet
+        end
     end
 
     def show
@@ -20,6 +29,10 @@ class SnippetController < ApplicationController
     end
 
     def snippet_not_found
-        render json: { error: "Nenhum snippet encontrado!" }, status: :not_found
+        render json: { error: "Nenhum snippet encontrado com esse ID." }, status: :not_found
+    end
+
+    def snippet_invalid
+        render json: { error: "Texto não providenciado ou mal formatado. Por favor, adicione um texto em formato string para ser resumido." }, status: :not_found
     end
 end
