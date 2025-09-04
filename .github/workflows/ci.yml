@@ -76,13 +76,13 @@ jobs:
 
       - name: Run unit tests
         env:
-          PG_DATABASE: postgres
-          PG_HOST: localhost
-          PG_USER: postgres
-          PG_PASSWORD: password
+          DB_DATABASE: postgres
+          DB_HOST: localhost
+          DB_USER: postgres
+          DB_PASSWORD: password
           RAILS_ENV: test
         run: bundle exec rspec
-        
+
       - name: Create Coverage Artifact
         uses: actions/upload-artifact@v2
         with:
