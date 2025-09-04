@@ -75,7 +75,7 @@ jobs:
         env:
           DB_NAME: postgres
           DB_HOST: localhost
-          DB_USERNAMENAME: postgres
+          DB_USERNAME: postgres
           DB_PASSWORD: postgres
           RAILS_ENV: test
           WITH_COVERAGE: true
