@@ -1,5 +1,14 @@
 import snippetService from "@/services/snippets.service"
-import { useQuery} from "@tanstack/react-query"
+import { useQuery, QueryClient } from "@tanstack/react-query"
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5000,
+      refetchOnWindowFocus: false,
+    },
+  },
+})
 
 export function useGetSnippets() {
   const { data, status } = useQuery({
@@ -10,4 +19,11 @@ export function useGetSnippets() {
   })
 
   return { data, status }
+}
+
+export async function useGenerateSnippet(text: string) {
+  return await queryClient.fetchQuery({
+    queryKey: [`generate-snippet`],
+    queryFn: () => snippetService.generateSnippet({ text }),
+  })
 }
