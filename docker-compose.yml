@@ -31,7 +31,11 @@ services:
 
   snippetsai_frontend:
     env_file: ".env"
-    build: ./frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:3000
     command: "npm run start"
     environment:
       NEXT_PUBLIC_API_URL: snippetsai_backend
