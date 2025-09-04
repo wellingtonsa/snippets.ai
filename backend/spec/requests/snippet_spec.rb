@@ -48,7 +48,7 @@ RSpec.describe SnippetController, type: :request do
       expect(body.dig("summary")).to be_truthy
     end
 
-    it "should return 'Nenhum texto providenciado. Por favor, adicione um texto para ser resumido.' if there is no snippet with the ID ", focus: true do
+    it "should return 'Texto não providenciado ou mal formatado. Por favor, adicione um texto em formato string para ser resumido.' if there is no snippet with the ID ", focus: true do
       snippet = Snippet.create(text: "Text", summary: "Summary")
 
       post "/snippets", params: {}
@@ -57,7 +57,7 @@ RSpec.describe SnippetController, type: :request do
 
       body = JSON.parse(response.body)
 
-      expect(body.dig("error")).to eq('Nenhum texto providenciado. Por favor, adicione um texto para ser resumido.')
+      expect(body.dig("error")).to eq('Texto não providenciado ou mal formatado. Por favor, adicione um texto em formato string para ser resumido.')
      end
    end
 end

@@ -5,7 +5,7 @@ class SnippetController < ApplicationController
     rescue_from ChatGPT::AuthenticationError, with: :gpt_authentication_error
     def create
         text = params[:text]
-        p text
+
         if text.nil? || text.empty?
             snippet_invalid()
         else
