@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # Error handling
-  unless Rails.env.development?
-    match "*unmatched", to: "errors#not_found", via: :all
-    match "/", to: "application#ok", via: :all
-  end
+  match "*unmatched", to: "errors#not_found", via: :all
+  match "/", to: "application#ok", via: :all
 end
