@@ -24,7 +24,7 @@ class SnippetController < ApplicationController
     end
 
     def index
-        snippets = Snippet.all
+        snippets = Snippet.all.order(id: :desc)
         render json: snippets
     end
 
