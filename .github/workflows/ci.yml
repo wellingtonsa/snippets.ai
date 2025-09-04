@@ -74,7 +74,7 @@ jobs:
         env:
           DB_DATABASE: postgres
           DB_HOST: localhost
-          DB_USER: postgres
+          DB_USER: runner
           DB_PASSWORD: postgres
           RAILS_ENV: test
           WITH_COVERAGE: true
@@ -87,7 +87,7 @@ jobs:
         env:
           DB_DATABASE: postgres
           DB_HOST: localhost
-          DB_USER: postgres
-          DB_PASSWORD: password
+          DB_USER: runner
+          DB_PASSWORD: postgres
           RAILS_ENV: test
         run: bundle exec rspec
