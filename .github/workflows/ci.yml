@@ -82,9 +82,3 @@ jobs:
           DB_PASSWORD: password
           RAILS_ENV: test
         run: bundle exec rspec
-
-      - name: Create Coverage Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: code-coverage
-          path: coverage/
