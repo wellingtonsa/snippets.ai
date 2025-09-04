@@ -5,6 +5,7 @@ import InputArea from '@/components/input-area';
 import Bubble from '@/components/bubble';
 import { useGenerateSnippet, useGetSnippets } from '@/hooks/useSnippets';
 import { Snippet } from '@/types/snippets.types';
+import Table from '@/components/table';
 
 const SnippetsView: React.FC = () => {
     const [text, setText] = useState<string>("");
@@ -33,9 +34,6 @@ const SnippetsView: React.FC = () => {
         setIsLoading(false);
     }
 
-
-
-    console.log(snippets)
     return (
         <>
             <div className="w-full mb-20 mt-15">
@@ -44,6 +42,8 @@ const SnippetsView: React.FC = () => {
             </div>
             <InputArea buttonText="✨ Gerar resumo ✨" value={text} onChange={setText} onClick={handleSubmit} disabled={isLoading} />
             {lastGenerated && (<Bubble value={lastGenerated.summary} />)}
+            <div className='border-1 border-gray-100 w-full mt-20' />
+            <Table data={snippets} />
         </>
     )
 }
