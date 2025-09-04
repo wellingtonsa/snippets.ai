@@ -3,7 +3,7 @@ name: CI - Frontend
 on:
   pull_request:
   push:
-    branches: [ ci-pipeline ]
+    branches: [ main ]
 
 jobs:
   lint:
