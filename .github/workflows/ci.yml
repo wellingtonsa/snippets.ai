@@ -42,6 +42,7 @@ jobs:
       postgres:
         image: postgres:14
         env:
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         ports: ['5432:5432']
 
@@ -74,7 +75,7 @@ jobs:
         env:
           DB_DATABASE: postgres
           DB_HOST: localhost
-          DB_USER: runner
+          DB_USER: postgres
           DB_PASSWORD: postgres
           RAILS_ENV: test
           WITH_COVERAGE: true
@@ -87,7 +88,7 @@ jobs:
         env:
           DB_DATABASE: postgres
           DB_HOST: localhost
-          DB_USER: runner
+          DB_USER: postgres
           DB_PASSWORD: postgres
           RAILS_ENV: test
         run: bundle exec rspec
