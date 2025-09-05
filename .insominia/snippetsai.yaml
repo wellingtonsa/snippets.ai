@@ -1,0 +1,92 @@
+type: collection.insomnia.rest/5.0
+name: SnippetsAI
+meta:
+  id: wrk_8befaec3006049f7b4891d08c62b97a8
+  created: 1757034546195
+  modified: 1757034546195
+  description: ""
+collection:
+  - url: http://localhost:3000/snippets
+    name: List All
+    meta:
+      id: req_92fd0ac1661c473f872280f9fddf6760
+      created: 1757034553132
+      modified: 1757034581722
+      isPrivate: false
+      description: ""
+      sortKey: -1757034553132
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/snippets/10
+    name: Find By ID
+    meta:
+      id: req_7124ea54a5834f1fb71173c1187db3aa
+      created: 1757034586793
+      modified: 1757034603725
+      isPrivate: false
+      description: ""
+      sortKey: -1757034586793
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: ""
+    name: Generate Snippet
+    meta:
+      id: req_658496fd92974a4ea53a75461ad301d6
+      created: 1757034608496
+      modified: 1757034646194
+      isPrivate: false
+      description: ""
+      sortKey: -1757034608496
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"text": "Text to summarize"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.5.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_185d3c07eb526e6179243c9b7df8c1f934445326
+    created: 1757034546197
+    modified: 1757034546197
+environments:
+  name: Base Environment
+  meta:
+    id: env_185d3c07eb526e6179243c9b7df8c1f934445326
+    created: 1757034546196
+    modified: 1757034546196
+    isPrivate: false
