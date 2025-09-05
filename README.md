@@ -46,7 +46,7 @@ Além dos pacotes mencionados, também é preciso uma chave de API da OpenAI, qu
 ![Alt text](https://i.imgur.com/yVVBtEp.png)
 - A chave de API deve aparecer na tela
 
-Nota: A chave de API só aparecerá uma única vez. Então é recomendado que seja feito uma cópia assim que criada, pois caso seja perdida, uma nova chave de API terá que ser feita. Além disto, como este é um serviço pago, fai-se necessário a adição de crédito na sua conta da OpenAI para usufuir do serviço.
+Nota: A chave de API só aparecerá uma única vez. Então é recomendado que seja feito uma cópia assim que criada, pois caso seja perdida, uma nova chave de API terá que ser feita. Além disto, como este é um serviço pago, faz-se necessário a adição de crédito na sua conta da OpenAI para usufuir do serviço.
 
 ## Instruções de execução
 
@@ -137,9 +137,9 @@ Tanto localmente como via Docker, os serviços podem ser acessados através:
 
 Sem dúvidas esse foi um dos melhores desafios que já fiz, por diversos motivos. Geralmente um desafio tem o propósito ser um momento para mostrar habilidades com o que você já tem domínio, pondo em prática tudo que com o que você já está familiarizado.
 
-No entanto, neste desafio eu me deparei com um grande "obstáculo" logo no inicio, Ruby on Rails. Eu particularmente já tinha ouvido falar na linguagem Ruby, e no framework Rails, mas nunca parei para pesquisar sobre, ou tentar entender mais sobre como funciona, mas assim que iniciei o desafio, me deparei com o requerimento do backend, que deveria ser feito utilizando Ruby on Rails, com direito implementação de bibliotecas para lint e testes. Talvez este foi a primeira decisão que tive que tomar no projeto, decidir entre aprender enquanto implemento, ou tirar um tempo e me aprofundar no assunto.
+No entanto, neste desafio eu me deparei com um grande "obstáculo" logo no inicio, Ruby on Rails. Eu particularmente já tinha ouvido falar na linguagem Ruby, e no framework Rails, mas nunca parei para pesquisar sobre, ou tentar entender mais sobre como funciona, mas assim que iniciei o desafio, me deparei com o requerimento do backend, que deveria ser feito utilizando Ruby on Rails, com direito implementação de bibliotecas para lint e testes. Talvez esta foi a primeira decisão que tive que tomar no projeto, decidir entre aprender enquanto implemento, ou tirar um tempo e me aprofundar no assunto.
 
-Então, escolhi a segunda opção, e dos 7 dias de desafio, passei 4 pesquisando e aprendendo sobre Ruby e Rails, indo desde o básico até a construção de API e deploy em produção. Utilizei estes primeiros dias para aprender sobre a linguagem, como aplicar padroôes de projeto na estrutura do Rails, e como ele funciona por baixo dos panos, e digo que com certeza aprendi muitas coisas que me foram úteis nos ultimos 3 dias de implementação, percebi que tem algumas semelhanças com Golang, o que me ajudou a assimilar durante o aprendizado, e vi que o framework Rails já entrega tudo pronto e estruturado, desde estrutura de pastas, até arquivo Dokerfile pré-configurado.
+Então, escolhi a segunda opção, e dos 7 dias de desafio, passei 4 pesquisando e aprendendo sobre Ruby e Rails, indo desde o básico até a construção de API e deploy em produção. Utilizei estes primeiros dias para aprender sobre a linguagem, como aplicar padrões de projeto na estrutura do Rails, e como ele funciona por baixo dos panos, e digo que com certeza aprendi muitas coisas que me foram úteis nos ultimos 3 dias de implementação. Percebi que tem algumas semelhanças com Golang, o que me ajudou a assimilar durante o aprendizado, e vi que o framework Rails já entrega tudo pronto e estruturado, desde estrutura de pastas, até arquivo Dokerfile pré-configurado.
 
 Acredito que com mais tempo, eu poderia focar em melhorar tanto o backend quanto o frontend. No front, talvez melhorando a estrutura e organização do código e estilização dos componentes, além de fazer um melhor gerenciamento de textos. Já no backend, por ser algo novo pra mim, talvez eu investiria mais tempo estudando, pra aí sim descobrir o que poderia ser melhorado.
 
