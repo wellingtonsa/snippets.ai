@@ -13,7 +13,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Installing Node.js
         uses: actions/setup-node@v3
@@ -34,7 +34,7 @@ jobs:
         working-directory: ./frontend
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Installing Node.js
         uses: actions/setup-node@v3
